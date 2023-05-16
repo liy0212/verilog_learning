@@ -1,11 +1,11 @@
-
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2023/04/14 10:29:34
+// Create Date: 2023/03/30 20:07:42
 // Design Name: 
-// Module Name: async_reset
+// Module Name: FA_1
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,17 +19,20 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+module FA_1(S,Co,Ai,Bi,Ci);
 
-module async_reset(
-    input rstn,
-    input clk,
-    input din,
-    output reg dout
-  
-    );
-    always @(posedge clk or negedge rstn)begin
-    if(rstn) dout <= 1'b0;
-    else dout <=din;
-   
-    end
+
+input Ai,Bi,Ci;
+output S,Co;
+
+wire s1,s2,s3;
+
+xor(s1,Ai,Bi);
+xor(S,s1,Ci);
+
+and(s2,Bi,Ai);
+and(s3,Ci,s1);
+
+or(Co,s2,s3);
+
 endmodule

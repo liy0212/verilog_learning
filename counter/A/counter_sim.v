@@ -11,20 +11,7 @@ module count_sim(
     wire co;
     reg flag;
 
-//always@(enabled)
-//begin
-//if(enabled)
-//flag<=1'b1;
-//else 
-//flag<=1'b0;
-//end
 
-//always@(mode)
-//begin 
-//if(mode)
-//step<=4'b0001;
-//else step<= 4'b1111;
-//end
 
 FA_4 adder1(.sum(temp1),.co(co),.ai(cnt),.bi(step),.ci(ci));
 
