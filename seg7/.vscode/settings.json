@@ -1,9 +1,0 @@
-{
-    "json.schemas": [
-
-    ],
-    "[verilog]": {
-        "files.encoding": "gb2312"
-    },
-
-}
